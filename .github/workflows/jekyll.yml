@@ -3,7 +3,7 @@ name: build site with jekyll and deploy on github pages
 on:
   push: 
     branches: 
-      - main
+      - master
 
 jobs:
   jekyll:
