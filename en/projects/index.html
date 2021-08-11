@@ -1,0 +1,30 @@
+---
+title: Projects
+layout: default
+lang: en
+categories:
+ - projects
+---
+<div class="row">
+    <div class="col">
+      <h2>{{ site.data.translations['Projects'][page.lang] }}</h2>
+    </div>
+  </div>
+  <div>
+  {% assign projects = site.categories.projects | where: "lang", page.lang %}
+  {% for proj in projects | sort_by: "name" %}
+       <div class="row py-3">
+        <div class="col-2">
+             <img src="{{ proj.image }}" width="200" height="200">
+        </div>
+        <div class="col pt-5">
+            <div class="row">
+             <h3><a class='postLink' href="{{ proj.url }}">{{ proj.name }}</a></h3>
+            </div>
+            <div class="row">
+             <p>{{ proj.authors }}</p>
+            </div>
+        </div>
+       </div>
+  {% endfor %}
+  </div>

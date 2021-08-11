@@ -1,0 +1,25 @@
+---
+layout: default
+---
+{% assign data = page %}
+<div class="row pt-3">
+  <div class="col">
+    {% for img in data.images %}
+       {% cycle 'add rows': '<div class="row pt-3">', '' %}
+         <div class="row">
+           <img src="{{ img.image }}" width="200">
+         </div>
+         <div class="row justify-content-center pt-2 pb-4">
+           <p class="figureCaption">{{ img.alt }}</p>
+         </div>
+       {% cycle 'close rows': '', '</div>' %}
+    {% endfor %}
+  {% cycle 'close rows': '', '</div>' %}
+  </div>
+  <div class="col">
+    <div class="row pt-3" style="position: sticky; top: 5em;">
+      <h2>{{page.title}}: {{page.start_date}} - {{page.end_date}}</h2>
+      {{content}}
+    </div>
+  </div>
+</div>

@@ -1,0 +1,27 @@
+---
+layout: default
+---
+{% assign proj = page %}
+<div class="row pt-3">
+  <div class='col-3'>
+    <div class='row'>
+      {% if bio.image %}
+      <img src="{{ proj.image }}" width="200">
+      {% else %}
+      <img src="/images/projects/Unknown.jpg" width='200'>
+      {% endif %}
+    </div>
+    <div class="row py-3">
+      <h2>{{ proj.name }}</h2>
+      <h4>{{ proj.authors }}</h4>
+    </div>
+  </div>
+  <div class="col">
+    <div class="row pt-3" style="position: sticky; top: 5em;">
+        <h2>{{site.data.translations["Description"][page.lang]}}:</h2>
+  
+        {{ content }}
+    
+    </div>
+  </div>
+</div>

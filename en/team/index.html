@@ -1,0 +1,39 @@
+---
+layout: default
+title: Team
+categories: 
+ - team
+---
+
+<div class="row">
+  <div class="col">
+    <h2>{{site.data.translations['Team'][page.lang]}}</h2>
+  </div>
+</div>
+
+
+{% assign members = site.categories.team | where: "lang", page.lang | sort: "order" %}
+{% for member in members %}
+     {% cycle 'add rows': '<div class="row py-3">', '' %}
+      <div class="col-sm-6">
+       <div class="row">
+         <div class="col-5">
+           {% if member.image %}
+           <img src="{{ member.image }}" width="200">
+           {% else %}
+           <img src="/images/team/Unknown.jpg" width='200'>
+           {% endif %}
+         </div>
+         <div class="col-5 pt-5">
+          <div class="m1">
+           <h3><a class='postLink' href="{{ member.url }}">{{ member.name }}</a></h3>
+          </div>
+          <div class="m2">
+           <p>{{ member.title }}</p>
+          </div>
+         </div>
+       </div>
+      </div>
+   {% cycle 'close rows': '', '</div>' %}
+{% endfor %}
+{% cycle 'close rows': '', '</div>' %}

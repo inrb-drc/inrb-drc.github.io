@@ -1,0 +1,33 @@
+---
+layout: default
+---
+{% assign bio = page %}
+<div class="row pt-3">
+  <div class='col-3'>
+    <div class='row'>
+      {% if bio.image %}
+      <img src="{{ bio.image }}" width="200">
+      {% else %}
+      <img src="/images/team/Unknown.jpg" width='200'>
+      {% endif %}
+    </div>
+    <div class="row py-3">
+      <h2>{{ bio.name }}</h2>
+      <h4>{{ bio.title }}</h4>
+    </div>
+    {% if bio.twitter %}
+    <div class="row pt-1">
+      {% assign profile_url = "https://twitter.com/" | append: bio.twitter %}
+      {% twitter profile_url limit=5 maxheight=200 lang=page.lang %}
+    </div>
+    {% endif %}
+  </div>
+  <div class="col">
+    <div class="row pt-3" style="position: sticky; top: 5em;">
+        <h2>{{site.data.translations["Biography"][page.lang]}}:</h2>
+  
+        {{ content }}
+    
+    </div>
+  </div>
+</div>

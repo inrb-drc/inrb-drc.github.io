@@ -1,0 +1,24 @@
+theme: jekyll-theme-minimal
+title: Path-Seq-Lab INRB-DRC
+url: http://rchapman2022.github.io/
+lang: en
+
+markdown: kramdown
+future: true
+
+sass:
+  sass_dir: css
+
+plugins:
+  - jekyll-redirect-from
+  - jekyll-twitter-plugin
+
+defaults:
+  - scope:
+      path: "en"
+    values:
+      lang: "en"
+  - scope: 
+      path: "fr"
+    values:
+      lang: "fr"

@@ -1,0 +1,32 @@
+---
+layout: default
+title: Publications
+categories: 
+ - publications
+---
+
+<div class="row">
+  <div class="col">
+    <h2>Publications</h2>
+  </div>
+</div>
+<div>
+{% assign years = site.categories.publications | where: "lang", page.lang | group_by: "year" %}
+{% for year in years | sort_by: "name" %}
+{% for pub in year.items | sort: "pub_title" %}
+     <div class="row py-3">
+      <div class="col-2">
+           <img src="{{ pub.image }}" width="200" height="200">
+      </div>
+      <div class="col pt-5">
+          <div class="row">
+           <h3><a class='postLink' href="{{ pub.link }}">{{ pub.pub_title }}</a></h3>
+          </div>
+          <div class="row">
+           <p>{{ pub.authors }}, {{ pub.year }} {{pub.journal}}</p>
+          </div>
+      </div>
+     </div>
+{% endfor %}
+{% endfor %}
+</div>

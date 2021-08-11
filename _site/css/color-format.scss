@@ -1,0 +1,163 @@
+$font-family: 'Lato', sans-serif;
+$nav-font-weight: 200;
+$nav-bg-color: #e8e8e8;
+$h2-font-weight: 600;
+$h3-font-weight: 400;
+$h4-font-weight: 400;
+$nav-hover: #ad0505;
+$h2-size: 28px;
+$h3-size: 24px;
+$h4-size: 20px;
+
+.navbar-brand {
+  font-size: 22px;
+  font-family: $font-family;
+  font-weight: 400;
+  color: black;
+  position: relative;
+}
+
+.navbar-brand:hover {
+  color: $nav-hover;
+  font-weight: 400;
+}
+
+.navbar-brand::after {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  background-color: $nav-hover;
+  color: transparent;
+  width: 0%;
+  content: '.';
+  height: 2px;
+  transition: all 0.5s;
+}
+
+.navbar-brand a:hover::after {
+  width: 100%;
+}
+
+.navbar-brand {
+  transition: all 0.5s;
+}
+
+.navbar-nav .nav-link {
+  font-size: 18px;
+  font-family: $font-family;
+  font-weight: $nav-font-weight;
+  color: black;
+  position: relative;
+}
+
+.navbar-nav .nav-link:hover {
+  color: $nav-hover;
+  font-weight: $nav-font-weight;
+}
+
+.navbar-nav .nav-link::after {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  background-color: $nav-hover;
+  color: transparent;
+  width: 0%;
+  content: ".";
+  height: 2px;
+  transition: all 0.25s;
+}
+
+.navbar-nav .nav-link:hover::after {
+  width: 100%;
+}
+
+.dropdown-toggle::after {
+  border: 0px;
+}
+
+.nav-item {
+  background-color: $nav-bg-color;
+}
+
+.bg-nav {
+  background-color: $nav-bg-color;
+}
+
+.nav-pills {
+  background-color: $nav-bg-color;
+}
+
+h2 {
+  font-family: $font-family;
+  font-weight: $h2-font-weight;
+  font-size: $h2-size;
+}
+
+h3 {
+  font-family: $font-family;
+  font-weight: $h3-font-weight;
+  font-size: $h3-size;
+}
+
+h4 {
+  font-family: $font-family;
+  font-weight: $h4-font-weight;
+  font-size: $h4-size;
+}
+
+.postLink {
+  color: black;
+  font-weight: $h3-font-weight;
+}
+
+.postLink:hover {
+  color: $nav-hover;
+  font-weight: $h3-font-weight
+}
+
+.postLink a::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: $nav-hover;
+  visibility: hidden;
+  transform: scaleX(0);
+  transition: all 0.3s ease-in-out 0s;
+}
+
+.nav-link a:hover::before {
+  visibility: visible;
+  transform: scaleX(1);
+}
+
+p {
+  font-family: $font-family;
+  font-size: 16px;
+}
+
+.figureCaption {
+  font-family: $font-family;
+  font-size: 18px;
+  width: auto;
+}
+
+.covidLink {
+  font-family: $font-family;
+  font-weight: $h3-font-weight;
+  font-size: $h3-size;
+  width: auto;
+}
+
+img {
+  border: 1px solid black;
+  padding: 0px !important;
+}
+
+

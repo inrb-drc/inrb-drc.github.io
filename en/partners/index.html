@@ -1,0 +1,40 @@
+---
+title: Partners
+layout: default
+lang: en
+categories:
+ - partners
+---
+<div class="row">
+    <div class="col">
+      <h2>{{ site.data.translations['Partners'][page.lang] }}</h2>
+    </div>
+  </div>
+  <div>
+  {% assign partners = site.categories.partners | where: "lang", page.lang %}
+  {% for part in partners | sort_by: "name" %}
+       <div class="row py-3">
+        <div class="col-2">
+        {% if part.image %}
+           <img src="{{ part.image }}" width="200">
+           {% else %}
+           <img src="/images/partners/Unknown.jpg" width='200'>
+           {% endif %}
+        </div>
+        <div class="col pt-5">
+            <div class="row">
+            {% if part.link %}
+             <h3><a class='postLink' href="{{ part.link }}">{{ part.name }}</a></h3>
+            {% else %}
+            <h3>{{ part.name }}</h3>
+            {% endif %}
+            </div>
+            {% if part.description %}
+            <div class="row">
+             <p>{{ part.description }}</p>
+            </div>
+            {% endif %}
+        </div>
+       </div>
+  {% endfor %}
+  </div>

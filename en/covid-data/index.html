@@ -1,0 +1,19 @@
+---
+title: COVID-19 Data
+layout: default
+categories:
+ - covid-data
+---
+
+<div class="row">
+  <div class="col">
+    <h2>{{ site.data.translations['COVID'][page.lang] }}</h2>
+  </div>
+</div>
+<div class="row">
+{% for report in site.categories.covid-data | where: "lang", page.lang | sort: "end_date" %}
+     <div class="row py-3 justify-content-center">
+           <h3 class="covidLink"><a class='postLink' href="{{ report.url }}">{{ report.title }}: {{ report.start_date }} - {{ report.end_date }}</a></h3>
+      </div>
+{% endfor %}
+</div>
