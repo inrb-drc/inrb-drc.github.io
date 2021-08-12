@@ -1,7 +1,8 @@
 theme: jekyll-theme-minimal
 title: Path-Seq-Lab INRB-DRC
-url: https://inrb-drc.github.io/inrb-website/
+url: https://inrb-drc.github.io/inrb-website
 lang: en
+baseurl: /inrb-website
 
 markdown: kramdown
 future: true
